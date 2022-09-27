@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // exemplo
+    // exemplo ISSO EH PARA SISTEMAS NAO LINEARES
     double f1(double x, double y) {
         return 4* x*x + (y*y)- 5;
     }
