@@ -9,6 +9,9 @@ static GLfloat xRot = 0.0f;
 
 void torres(GLUquadric *);
 void muros(GLUquadric *);
+void base(GLUquadric *);
+void barrinhasLaterais();
+void barrinhasFrontais();
 
 // Change viewing volume and viewport.  Called when window is resized
 void ChangeSize(int w, int h)
@@ -225,7 +228,7 @@ void torres(GLUquadric *pObj) {
     float altura = 1.5f;
     float raioCone = 0.6f;
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.6f, 0.6f, 0.6f);
     glPushMatrix();
         glTranslatef(-posX, posY, -posZ);
         glRotatef(90, 1, 0, 0);
@@ -234,7 +237,7 @@ void torres(GLUquadric *pObj) {
         glutSolidCone(raioCone, 1.0f, 26, 13);
     glPopMatrix();
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.6f, 0.6f, 0.6f);
     glPushMatrix();
         glTranslatef(posX, posY, -posZ);
         glRotatef(90, 1, 0, 0);
@@ -243,7 +246,7 @@ void torres(GLUquadric *pObj) {
         glutSolidCone(raioCone, 1.0f, 26, 13);
     glPopMatrix();
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.6f, 0.6f, 0.6f);
     glPushMatrix();
         glTranslatef(posX, posY, posZ);
         glRotatef(90, 1, 0, 0);
@@ -252,7 +255,7 @@ void torres(GLUquadric *pObj) {
         glutSolidCone(raioCone, 1.0f, 26, 13);
     glPopMatrix();
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.6f, 0.6f, 0.6f);
     glPushMatrix();
         glTranslatef(-posX, posY, posZ);
         glRotatef(90, 1, 0, 0);
@@ -268,6 +271,8 @@ void muros(GLUquadric *pObj) {
         glTranslatef(2.0f, -0.5f, 0.0f);
         glScalef(0.3f, 1.0f, 3.0f);
         glutSolidCube(1.0f);
+
+        barrinhasFrontais();
     glPopMatrix();
 
     glPushMatrix();
@@ -275,6 +280,8 @@ void muros(GLUquadric *pObj) {
         glTranslatef(-2.0f, -0.5f, 0.0f);
         glScalef(0.3f, 1.0f, 3.0f);
         glutSolidCube(1.0f);
+
+        barrinhasFrontais();
     glPopMatrix();
 
     glPushMatrix();
@@ -282,6 +289,8 @@ void muros(GLUquadric *pObj) {
         glTranslatef(0.0f, -0.5f, 2.0f);
         glScalef(3.0f, 1.0f, 0.3f);
         glutSolidCube(1.0f);
+
+        barrinhasLaterais();
     glPopMatrix();
 
     glPushMatrix();
@@ -289,5 +298,52 @@ void muros(GLUquadric *pObj) {
         glTranslatef(0.0f, -0.5f, -2.0f);
         glScalef(3.0f, 1.0f, 0.3f);
         glutSolidCube(1.0f);
+        barrinhasLaterais();
+/*
+        //barrinhas do muro
+        glTranslatef(-0.4f, 0.4f, 0.0f);
+        glScalef(0.1f, 0.5f, 0.3f);
+        glutSolidCube(1.0f);
+
+        i = 0;
+        for (i=0; i <= 4; i++) {
+            glTranslatef(2.0f, 0.0f, 0.0f);
+            glutSolidCube(1.0f);
+        }
+*/
     glPopMatrix();
 } 
+
+void base(GLUquadric *pObj) {
+    glPushMatrix();
+        glColor3f(0.0f, 0.6f, 0.0f);
+        glTranslatef(0.0f, -1.5f, 0.0f);
+        glScalef(6.0f, 1.0f, 6.0f);
+        glutSolidCube(1.0f);
+    glPopMatrix();
+
+}
+
+void barrinhasLaterais() {
+    glTranslatef(-0.4f, 0.6f, 0.0f);
+    glScalef(0.1f, 0.2f, 0.3f);
+    glutSolidCube(1.0f);
+
+    int i = 0;
+    for (i=0; i <= 4; i++) {
+        glTranslatef(2.0f, 0.0f, 0.0f);
+        glutSolidCube(1.0f);
+    }
+}
+
+void barrinhasFrontais() {
+    glTranslatef(0.0f, 0.6f, -0.4f);
+    glScalef(0.3f, 0.2f, 0.1f);
+    glutSolidCube(1.0f);
+
+    int i = 0;
+    for (i=0; i <= 4; i++) {
+        glTranslatef(0.0f, 0.0f, 2.0f);
+        glutSolidCube(1.0f);
+    }
+}
