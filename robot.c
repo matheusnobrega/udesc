@@ -285,7 +285,7 @@ void bracoEsquerdo(GLUquadric *pObj) {
     glPushMatrix(); // save transform matrix state
         glTranslatef(0.3f, 0.65f, 0.0f);
         gluSphere(pObj, 0.07f, 26, 13);
-        glRotatef(90, 1, 0, 1);
+        glRotatef(90, 0, 1, 0);
        gluCylinder(pObj, 0.04f, 0.04f, 0.3f, 26, 13);
        gluSphere(pObj, 0.07f, 26, 13);
        glTranslatef(0.0f, 0.0f, 0.3f);
@@ -295,23 +295,24 @@ void bracoEsquerdo(GLUquadric *pObj) {
        gluSphere(pObj, 0.3f, 26, 13);
        glTranslatef(0.0f, 0.0f, 0.30f);
        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-    //    glTranslatef(0.1f, -0.25f, -0.3f);
-    //    glRotatef(100, 1, 0, 0);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-    //    glTranslatef(0.1f, -0.25f, -0.3f);
-    //    glRotatef(90, 0, 0, 1);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);  
-    //    glTranslatef(0.1f, -0.05f, -0.4f);
-    //    glRotatef(120, 1, 1, 0);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-    //    glTranslatef(-0.0f, 0.15f, -0.2f);
-    //    glRotatef(250, 1, 1, 1);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-    //    glTranslatef(-0.1f, -0.1f, -0.4f);
-    //    glRotatef(180, 1, 0, 0);
-    //    gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
-
+    /*
+        glTranslatef(0.1f, -0.25f, -0.3f);
+        glRotatef(100, 1, 0, 0);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
+        glTranslatef(0.1f, -0.25f, -0.3f);
+        glRotatef(90, 0, 0, 1);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);  
+        glTranslatef(0.1f, -0.05f, -0.4f);
+        glRotatef(120, 1, 1, 0);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
+        glTranslatef(-0.0f, 0.15f, -0.2f);
+        glRotatef(250, 1, 1, 1);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
+        glTranslatef(-0.1f, -0.1f, -0.4f);
+        glRotatef(180, 1, 0, 0);
+        gluCylinder(pObj, 0.04f, 0.0f, 0.3f, 26, 13);
+    */
     glPopMatrix();
 
 }
@@ -319,17 +320,21 @@ void bracoEsquerdo(GLUquadric *pObj) {
 void bracoDireito(GLUquadric *pObj) {
     glColor3f(0.663f, 0.663f, 0.663f);
     glPushMatrix(); // save transform matrix state
-        glTranslatef(-0.3f, 0.65f, 0.0f);
-        gluSphere(pObj, 0.07f, 26, 13);
-        glRotatef(90, 1, 0, -1);
-        gluCylinder(pObj, 0.04f, 0.04f, 0.3f, 26, 13);
+       glTranslatef(-0.3f, 0.65f, 0.0f);
+       gluSphere(pObj, 0.07f, 26, 13);
+       glRotatef(90, 0, -1, 0);
+       gluCylinder(pObj, 0.04f, 0.04f, 0.3f, 26, 13);
        gluSphere(pObj, 0.07f, 26, 13);
        glTranslatef(0.0f, 0.0f, 0.3f);
        gluCylinder(pObj, 0.04f, 0.04f, 0.3f, 26, 13);
        gluSphere(pObj, 0.07f, 26, 13);
        glTranslatef(0.0f, 0.0f, 0.3f);
+       gluSphere(pObj, 0.1f, 26, 13);
+/*     
+       glTranslatef(0.0f, 0.0f, 0.3f);
        gluCylinder(pObj, 0.08f, 0.08f, 0.2f, 26, 13);
        glTranslatef(0.0f, 0.0f, 0.2f);
        gluCylinder(pObj, 0.02f, 0.02f, 0.3f, 26, 13);
+*/
     glPopMatrix(); // restore transform matrix state
 }
